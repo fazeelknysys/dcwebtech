@@ -59,7 +59,7 @@ collections:
   - name: logo
     label: Logo
     files:
-      - file: ../logo.json
+      - file: ../../src/data/logo.json
         name: Logo
         label: 'Logo Settings'
         fields:
