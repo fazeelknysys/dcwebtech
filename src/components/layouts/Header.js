@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderComponent from '../../helper/navhelper';
 import navigationmenu from '../../data/navigation.json';
-import logo from '../../data/logo.json';
+import logo from '../../data/logo.md';
 import classNames from 'classnames';
 import Canvas from './Canvas';
 import Mobilemenu from './Mobilemenu';
