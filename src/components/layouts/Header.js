@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderComponent from '../../helper/navhelper';
 import navigationmenu from '../../data/navigation.json';
-import logo from '../../data/logo.json';
+import logo from "../../assets/logo.json"
 import classNames from 'classnames';
 import Canvas from './Canvas';
 import Mobilemenu from './Mobilemenu';
@@ -10,6 +10,7 @@ import Mobilemenu from './Mobilemenu';
 class Header extends HeaderComponent {
     render() {
         const stickyheader = this.state.isTop ? 'sticky' : '';
+
         return (
             <header className={"header-absolute sticky-header " + stickyheader} id="can-sticky">
                 <div className="container-fluid custom-container-one">
@@ -18,7 +19,7 @@ class Header extends HeaderComponent {
                             <div className="col-md-6 col-sm-7">
                                 <ul className="contact-list">
                                     <li><Link to="#">info@example.com</Link></li>
-                                    <li><Link to="#">+988 987 876 87 67 6</Link></li>
+                                    <li><Link to="#">{logo.contact}</Link></li>
                                 </ul>
                             </div>
                             <div className="col-md-6 col-sm-5">

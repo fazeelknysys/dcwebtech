@@ -59,10 +59,22 @@ collections:
   - name: logo
     label: Logo 
     files:
-      - file: ../../src/data/logo.json
+      - file: ../../src/assets/logo.json
         name: Logo
         label: 'Logo Settings'
         fields:
           - name: "logo_url"
             label: "Logo URL"
-            widget: "image"       
+            widget: "image"
+            
+  - name: contact
+    label: Contact Number 
+    files:
+      - file: ../../src/assets/logo.json
+        name: contact
+        label: 'Contact Settings'
+        fields:
+          - name: "contact"
+            label: "Contact Number"
+            widget: "string"          
+
