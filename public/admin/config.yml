@@ -60,10 +60,14 @@ collections:
     label: logo
     files:
       - file: ../../src/data/logo.json
-        name: logo
+        name: Logo
         label: 'Logo Settings'
         fields:
-          - name: logo_url
-            label: 'Logo URL'
-            widget: string
-            required: true              
+          - name: "logo_url"
+            label: "Logo URL"
+            widget: "image"
+            choose_url: true
+            default: "public/assets/img/logo.png"
+            media_library:
+              config:
+                multiple: true             
