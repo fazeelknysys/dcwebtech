@@ -70,7 +70,7 @@ collections:
   - name: contact
     label: Contact Number 
     files:
-      - file: ../../src/assets/logo.json
+      - file: public/logo.json
         name: contact
         label: 'Contact Settings'
         fields:
