@@ -55,3 +55,15 @@ collections:
               - widget: string
                 name: type
                 label: 'Mime Type'
+  
+  - name: logo
+    label: logo
+    files:
+      - file: ../../src/data/logo.json
+        name: logo
+        label: 'Logo Settings'
+        fields:
+          - name: logo_url
+            label: 'Logo URL'
+            widget: string
+            required: true              

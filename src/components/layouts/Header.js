@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderComponent from '../../helper/navhelper';
 import navigationmenu from '../../data/navigation.json';
+import logo from '../../data/logo.json';
 import classNames from 'classnames';
 import Canvas from './Canvas';
 import Mobilemenu from './Mobilemenu';
@@ -35,7 +36,7 @@ class Header extends HeaderComponent {
                         <div className="d-flex align-items-center justify-content-between">
                             <nav className="main-menu">
                                 <div className="logo">
-                                    <Link to="/"><img src={process.env.PUBLIC_URL + "/assets/img/logo.png"} alt="logo" /></Link>
+                                    <Link to="/"><img src={process.env.PUBLIC_URL + "/assets/img/" + logo.logo_url } alt="logo" /></Link>
                                 </div>
                                 <div className="menu-items">
                                     <ul>
