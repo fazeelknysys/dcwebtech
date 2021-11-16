@@ -2,15 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderComponent from '../../helper/navhelper';
 import navigationmenu from '../../data/navigation.json';
-import logo from "../../data/logo.json"
 import classNames from 'classnames';
 import Canvas from './Canvas';
 import Mobilemenu from './Mobilemenu';
 
 class Header extends HeaderComponent {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          contact: ""
+        };
+    }
+
     render() {
         const stickyheader = this.state.isTop ? 'sticky' : '';
 
+    fetch("./logo.json").then(response => response.json())
+     .then((temp1)=> {this.setState({contact:temp1.contact});});
+        
         return (
             <header className={"header-absolute sticky-header " + stickyheader} id="can-sticky">
                 <div className="container-fluid custom-container-one">
@@ -19,7 +29,7 @@ class Header extends HeaderComponent {
                             <div className="col-md-6 col-sm-7">
                                 <ul className="contact-list">
                                     <li><Link to="#">info@example.com</Link></li>
-                                    <li><Link to="#">{logo.contact}</Link></li>
+                                    <li><Link to="#">{this.state.contact}</Link></li>
                                 </ul>
                             </div>
                             <div className="col-md-6 col-sm-5">
@@ -37,7 +47,7 @@ class Header extends HeaderComponent {
                         <div className="d-flex align-items-center justify-content-between">
                             <nav className="main-menu">
                                 <div className="logo">
-                                    <Link to="/"><img src={process.env.PUBLIC_URL + "/assets/img/" + logo.logo_url } alt="logo" /></Link>
+                                    <Link to="/"><img src={process.env.PUBLIC_URL + "/assets/img/"} alt="logo" /></Link>
                                 </div>
                                 <div className="menu-items">
                                     <ul>
