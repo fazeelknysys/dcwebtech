@@ -79,5 +79,8 @@ collections:
         fields:
           - name: "contact"
             label: "Contact Number"
-            widget: "string"          
+            widget: "string"
+          - name: "heading_title"
+            label: "Heading Title"
+            widget: "string"            
 

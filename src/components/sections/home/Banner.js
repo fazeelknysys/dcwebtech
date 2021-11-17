@@ -4,6 +4,14 @@ import Slider from 'react-slick';
 import mainbanner from '../../../data/mainbanner.json';
 
 class Banner extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          headingTitle: ""
+        };
+    }
+
     render() {
         const settings = {
             infinite: true,
@@ -21,6 +29,14 @@ class Banner extends Component {
                 },
             ]
         }
+
+        fetch("./design.json").then(response => response.json())
+        .then((data)=> {
+            this.setState({ 
+                headingTitle: data.heading_title
+            });
+        });
+
         return (
             <section className="banner-section" style={{ backgroundImage: "url(" + process.env.PUBLIC_URL + "/assets/img/banner/01.jpg)" }}>
                 <Slider {...settings} className="slider-active" id="bannerSliderOne">
@@ -30,7 +46,7 @@ class Banner extends Component {
                                 <div className="row extra-left">
                                     <div className="col-lg-8">
                                         <div className="banner-text">
-                                            <h1>{item.title}</h1>
+                                            <h1>{this.state.headingTitle}</h1>
                                             <p>{item.subtext}</p>
                                             <div className="btn-wrap">
                                                 <Link to="/contact" className="main-btn btn-filled">Get Started Now</Link>
