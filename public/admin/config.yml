@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
+media_folder: "public/assets/img"
 public_folder: "/assets/img"
 
 collections:
@@ -56,18 +57,18 @@ collections:
                 label: 'Mime Type'
   
   - name: logo
-    label: Logo 
+    label: Logo
     files:
       - file: public/design.json
         name: Logo
         label: "Logo Settings"
+        folder: "public/assets/img" 
         fields:
           - name: "logo_url"
             label: "Logo URL"
             widget: "image"
             choose_url: false
             default: "public/assets/img/logo.png"
-            media_folder: "public/assets/img"
             
   - name: contact
     label: Contact Number 
