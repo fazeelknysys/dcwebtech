@@ -11,15 +11,21 @@ class Header extends HeaderComponent {
     constructor(props) {
         super(props);
         this.state = {
-          contact: ""
+          contact: "",
+          logoUrl: ""
         };
     }
 
     render() {
         const stickyheader = this.state.isTop ? 'sticky' : '';
 
-    fetch("./logo.json").then(response => response.json())
-     .then((temp1)=> {this.setState({contact:temp1.contact});});
+    fetch("./design.json").then(response => response.json())
+     .then((data)=> {
+         this.setState({ 
+            contact: data.contact,
+            logoUrl: data.logo_url
+         });
+    });
         
         return (
             <header className={"header-absolute sticky-header " + stickyheader} id="can-sticky">
@@ -47,7 +53,7 @@ class Header extends HeaderComponent {
                         <div className="d-flex align-items-center justify-content-between">
                             <nav className="main-menu">
                                 <div className="logo">
-                                    <Link to="/"><img src={process.env.PUBLIC_URL + "/assets/img/"} alt="logo" /></Link>
+                                    <Link to="/"><img src={process.env.PUBLIC_URL + "/assets/img/" + this.state.logoUrl } alt="logo" /></Link>
                                 </div>
                                 <div className="menu-items">
                                     <ul>
