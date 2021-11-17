@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "public/assets/img"
 public_folder: "/assets/img"
 
 collections:
@@ -66,6 +65,9 @@ collections:
           - name: "logo_url"
             label: "Logo URL"
             widget: "image"
+            choose_url: false
+            default: "public/assets/img/logo.png"
+            media_folder: "public/assets/img"
             
   - name: contact
     label: Contact Number 
