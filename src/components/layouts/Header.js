@@ -17,10 +17,10 @@ class Header extends HeaderComponent {
     }
 
     componentDidMount() {
-        this.fetchData();
+        this.fetchDataLogo();
     }
     
-    fetchData = () => { 
+    fetchDataLogo = () => { 
         fetch("./design.json").then(response => response.json())
         .then((data)=> {
             this.setState({ 
