@@ -16,17 +16,23 @@ class Header extends HeaderComponent {
         };
     }
 
+    componentDidMount() {
+        this.fetchData();
+    }
+    
+    fetchData = () => { 
+        fetch("./design.json").then(response => response.json())
+        .then((data)=> {
+            this.setState({ 
+                contact: data.contact,
+                logoUrl: data.logo_url
+            });
+        }); 
+    }
+
     render() {
         const stickyheader = this.state.isTop ? 'sticky' : '';
 
-    fetch("./design.json").then(response => response.json())
-     .then((data)=> {
-         this.setState({ 
-            contact: data.contact,
-            logoUrl: data.logo_url
-         });
-    });
-        
         return (
             <header className={"header-absolute sticky-header " + stickyheader} id="can-sticky">
                 <div className="container-fluid custom-container-one">

@@ -1,9 +1,9 @@
 backend:
-  name: github
-  repo: Azlanburney/dcwebtech.git
+  name: git-gateway
+  branch: main
 
-media_folder: "public/images"
-public_folder: "images"
+media_folder: "public/assets/img"
+public_folder: "/assets/img"
 
 collections:
   - name: settings
@@ -55,3 +55,32 @@ collections:
               - widget: string
                 name: type
                 label: 'Mime Type'
+  
+  - name: logo
+    label: Logo
+    files:
+      - file: public/design.json
+        name: Logo
+        label: "Logo Settings"
+        folder: "public/assets/img" 
+        fields:
+          - name: "logo_url"
+            label: "Logo URL"
+            widget: "image"
+            choose_url: false
+            default: "public/assets/img/logo.png"
+            
+  - name: contact
+    label: Contact Number 
+    files:
+      - file: public/design.json
+        name: contact
+        label: 'Contact Settings'
+        fields:
+          - name: "contact"
+            label: "Contact Number"
+            widget: "string"
+          - name: "heading_title"
+            label: "Heading Title"
+            widget: "string"                    
+

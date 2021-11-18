@@ -82,5 +82,5 @@ collections:
             widget: "string"
           - name: "heading_title"
             label: "Heading Title"
-            widget: "string"            
+            widget: "string"                    
 
